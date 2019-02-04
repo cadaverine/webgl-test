@@ -59,12 +59,18 @@ class Drawer {
       gl.STATIC_DRAW,
     );
 
-    this.position = positionBuffer;
+    this.buffers = {
+      position: positionBuffer,
+    }
   }
 
 
   drawScene() {
-    const { gl } = this;
+    const {
+      gl,
+      buffers,
+      programInfo,
+    } = this;
 
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clearDepth(1.0);
