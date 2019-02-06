@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/cadaverine/webgl-test/issues"
   },
-  "homepage": "https://github.com/cadaverine/webgl-test#readme"
+  "homepage": "https://github.com/cadaverine/webgl-test#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.2",
+    "webpack-dev-server": "^3.1.14"
+  }
 }
