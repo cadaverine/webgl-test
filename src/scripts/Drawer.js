@@ -1,5 +1,4 @@
-
-class Drawer {
+export default class Drawer {
   constructor(canvas) {
     this.gl = canvas.getContext('webgl');
     this.canvas = canvas;
@@ -147,32 +146,4 @@ class Drawer {
     this.gl.compileShader(shader);
     return shader;
   }
-}
-
-
-const vertexShaderSource = `
-  attribute vec4 aVertexPosition;
-
-  uniform mat4 uModelViewMatrix;
-  uniform mat4 uProjectionMatrix;
-
-  void main() {
-    gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
-  }
-`;
-
-const fragmentShaderSource = `
-  void main() {
-    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
-  }
-`;
-
-
-function start() {
-  const canvas = document.getElementById('gl-canvas');
-  const drawer = new Drawer(canvas);
-
-  drawer.initShaderProgram(vertexShaderSource, fragmentShaderSource);
-  drawer.initBuffers();
-  drawer.drawScene();
 }
